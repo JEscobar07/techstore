@@ -1,9 +1,12 @@
+using DotNetEnv;
 using Microsoft.EntityFrameworkCore;
 using techstore.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+Env.Load();
 
 var dbHost = Environment.GetEnvironmentVariable("DB_HOST");
 var dbPort = Environment.GetEnvironmentVariable("DB_PORT");
