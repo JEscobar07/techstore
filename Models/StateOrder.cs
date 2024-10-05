@@ -4,20 +4,20 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace techstore.Models
 {
-    [Table("Roles")]
-    public class Rol
+    [Table("StateOrders")]
+    public class StateOrder
     {
-        [Key]
         [Column("id")]
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id {get; set;}
 
         [Column("name")]
         [Required]
-        [MaxLength(50)]
+        [MaxLength(100)]
         public string Name {get; set;}
 
         [Column("description")]

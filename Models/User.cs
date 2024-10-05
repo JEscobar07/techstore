@@ -16,15 +16,18 @@ namespace techstore.Models
         public int Id { get; set; }
 
         [Column("email")]
+        [Required]
         [MaxLength(100)]
-        public required string Email { get; set; }
+        public string Email { get; set; }
 
         [Column("password")]
+        [Required]
         [MaxLength(100)]
-        public required string Password { get; set; }
+        public string Password { get; set; }
 
         [Column("idRol")]
-        public required int IdRol { get; set; }
+        [Required]
+        public int IdRol { get; set; }
 
         [ForeignKey("IdRol")]
         public Rol Rol { get; set; }
