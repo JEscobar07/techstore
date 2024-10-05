@@ -43,7 +43,7 @@ namespace techstore.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Roles");
+                    b.ToTable("Roles", (string)null);
                 });
 
             modelBuilder.Entity("techstore.Models.User", b =>
@@ -75,7 +75,7 @@ namespace techstore.Migrations
 
                     b.HasIndex("IdRol");
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
                 });
 
             modelBuilder.Entity("techstore.Models.User", b =>

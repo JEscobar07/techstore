@@ -12,6 +12,9 @@ namespace techstore.Data
 
         public DbSet<Rol> Roles {get; set;}
         public DbSet<User> Users {get; set;}
+        public DbSet<Customer> Customers {get; set;}
+        public DbSet<StateOrder> StateOrders {get; set;}
+        public DbSet<Order> Orders {get; set;}
         public AppDbContext(DbContextOptions<AppDbContext> options): base(options)
         {
             
