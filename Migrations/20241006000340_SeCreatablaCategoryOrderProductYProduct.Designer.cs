@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using techstore.Data;
 
@@ -11,9 +12,11 @@ using techstore.Data;
 namespace techstore.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241006000340_SeCreatablaCategoryOrderProductYProduct")]
+    partial class SeCreatablaCategoryOrderProductYProduct
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -45,56 +48,6 @@ namespace techstore.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Description = "Equipos de escritorio, laptops, monitores, etc.",
-                            Name = "Computadoras y Portátiles"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Description = "Smartphones, tablets, accesorios para móviles.",
-                            Name = "Teléfonos y Tablets"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Description = "Teclados, ratones, webcams, auriculares, y más.",
-                            Name = "Accesorios para Computadoras"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Description = "Tarjetas gráficas, discos duros, fuentes de poder, procesadores.",
-                            Name = "Componentes de Hardware"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Description = "Discos duros externos, SSDs, memorias USB, tarjetas de memoria.",
-                            Name = "Almacenamiento y Memoria"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Description = "Routers, switches, cables, adaptadores Wi-Fi.",
-                            Name = "Redes y Conectividad"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Description = "Cámaras, drones, consolas de videojuegos.",
-                            Name = "Electrónica de Consumo"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            Description = "Sistemas operativos, antivirus, licencias de software.",
-                            Name = "Software y Licencias"
-                        });
                 });
 
             modelBuilder.Entity("techstore.Models.Customer", b =>
