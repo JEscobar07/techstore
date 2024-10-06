@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using techstore.DTOs;
 using techstore.Models;
+using techstore.Repositories;
 using techstore.Services;
 
 namespace techstore.Controllers.v1
@@ -13,7 +14,7 @@ namespace techstore.Controllers.v1
     [Route("api/v1/products")]
     public class ProductsCreateController : ProductsController
     {
-        public ProductsCreateController(ProductServices productServices) : base(productServices)
+        public ProductsCreateController(IProductRepository productRepository) : base(productRepository)
         {
         }
 
@@ -29,7 +30,7 @@ namespace techstore.Controllers.v1
                 AmountProducts  =  product.AmountProducts,
                 IdCategory = product.IdCategory
             };
-            await _productService.Add(productSave);
+            await _productRepository.Add(productSave);
             return Ok("Producto guardado con exito");
         }
     }

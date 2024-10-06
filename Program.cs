@@ -1,6 +1,8 @@
 using DotNetEnv;
 using Microsoft.EntityFrameworkCore;
 using techstore.Data;
+using techstore.Repositories;
+using techstore.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +19,9 @@ var conectionDB = $"server={dbHost};port={dbPort};database={dbDatabaseName};uid=
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseMySql(conectionDB, ServerVersion.Parse("8.0.20-mysql")));
+
+// ACA AGREGAMOS EL SERVICIO QUE NOS PERMITE TRABAJAR
+builder.Services.AddScoped<IProductRepository, ProductServices>();
 
 
 builder.Services.AddControllers();

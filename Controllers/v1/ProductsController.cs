@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using techstore.Repositories;
 using techstore.Services;
 
 namespace techstore.Controllers
@@ -11,11 +12,11 @@ namespace techstore.Controllers
     [Route("api/v1/products")]
     public class ProductsController : ControllerBase
     {
-        protected readonly ProductServices _productService;
+        protected readonly IProductRepository _productRepository;
 
-        public ProductsController(ProductServices productServices)
+        public ProductsController(IProductRepository productRepository)
         {
-            _productService = productServices;
+            _productRepository = productRepository;
         }
     }
 }
