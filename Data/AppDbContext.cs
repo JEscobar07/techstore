@@ -28,6 +28,7 @@ namespace techstore.Data
         {
             base.OnModelCreating(modelBuilder);
             CategorySeeder.Seed(modelBuilder);
+            ProductSeeder.Seed(modelBuilder,5);
         }
 
     }
